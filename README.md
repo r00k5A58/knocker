@@ -1,7 +1,7 @@
 # knocker
 Python utility to help with CTF or boot2root challenges that involve portknocking
 
-```bash
+```
 # ./knocker.py -h
 usage: knocker.py [-h] [-c CLOAKED] [-r RANGE | -p PORTS] dest_ip
 
