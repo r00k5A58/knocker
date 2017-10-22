@@ -1,6 +1,7 @@
 # knocker
 Python utility to help with CTF or boot2root challenges that involve portknocking
 
+```bash
 # ./knocker.py -h
 usage: knocker.py [-h] [-c CLOAKED] [-r RANGE | -p PORTS] dest_ip
 
@@ -17,3 +18,4 @@ optional arguments:
                         Specify a suspected range of ports to attempt to brute force (i.e. 1000-1200)
   -p PORTS, --ports PORTS
                         Comma separated list of ports to knock (in proper order)
+```
