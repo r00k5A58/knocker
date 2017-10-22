@@ -39,8 +39,8 @@ def brute_force_range(dest_ip, port_range, cloaked_port):
             print("Target port {} opened!".format(cloaked_port))
 
 def main():
-    parser = argparse.ArgumentParser()
-    run_mode = parser.add_mutually_exclusive_group()
+    parser = argparse.ArgumentParser(description="Tool to interact with ports cloaked with port knocking. Specify either -p or -r, and a target IP. -c can be used for success checking if the cloaked port is known.")
+    run_mode = parser.add_mutually_exclusive_group(required=True)
     parser.add_argument("dest_ip", help="Target host IP that makes use of port knocking")
     parser.add_argument("-c", "--cloaked", help="Specify the target cloaked port for success checking")
     # todo: add brute force option
