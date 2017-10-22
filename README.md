@@ -5,7 +5,8 @@ Python utility to help with CTF or boot2root challenges that involve portknockin
 # ./knocker.py -h
 usage: knocker.py [-h] [-c CLOAKED] [-r RANGE | -p PORTS] dest_ip
 
-Tool to interact with ports cloaked with port knocking. Specify weither -p or -r, and a target IP. -c can be used for success checking if the cloaked port is known.
+Tool to interact with ports cloaked with port knocking. Specify either -p or -r, and a target IP. 
+-c can be used for success checking if the cloaked port is known.
 
 positional arguments:
   dest_ip               Target host IP that makes use of port knocking
