@@ -1,6 +1,7 @@
 # knocker
-Python 3 utility to help with CTF or boot2root challenges that involve port knocking
+Python 3 utility to help with CTF or boot2root challenges that involve port knocking.
 
+Requires root or sudo privileges.
 Requires argparse.
 ```
 pip install argparse
