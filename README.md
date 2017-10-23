@@ -10,9 +10,9 @@ pip install argparse
 $ python knocker.py -h
 usage: knocker.py [-h] [-c CLOAKED] (-b | -r RANGE | -p PORTS) dest_ip
 
-Tool to interact with ports cloaked with port knocking. Specify either -p or
--r, and a target IP. -c can be used for success checking if the cloaked port
-is known.
+Tool to interact with ports cloaked with port knocking. Specify -p, -r, or -b,
+and a target IP. -c can be used for success checking if the cloaked port is
+known.
 
 positional arguments:
   dest_ip               Target host IP that makes use of port knocking
@@ -23,7 +23,7 @@ optional arguments:
   -c CLOAKED, --cloaked CLOAKED
                         Specify the target cloaked port for success checking
   -b, --bruteforce      
-                        Have knocker automatically brute force the target for you
+                        Have knocker automatically brute force the target for you. Shortcut for -r 1-65535
   -r RANGE, --range RANGE
                         Specify a suspected range of ports to attempt to brute force (i.e. 1000-1200)
   -p PORTS, --ports PORTS
