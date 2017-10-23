@@ -43,8 +43,7 @@ def main():
     run_mode = parser.add_mutually_exclusive_group(required=True)
     parser.add_argument("dest_ip", help="Target host IP that makes use of port knocking")
     parser.add_argument("-c", "--cloaked", help="Specify the target cloaked port for success checking")
-    # todo: add brute force option
-    # run_mode.add_argument("-b", "--bruteforce", help="Have knocker automatically brute force the target for you", action="store_true")
+    run_mode.add_argument("-b", "--bruteforce", help="Have knocker automatically brute force the target for you", action="store_true")
     run_mode.add_argument("-r", "--range", help="Specify a suspected range of ports to attempt to brute force (i.e. 1000-1200)")
     run_mode.add_argument("-p", "--ports", help="Comma separated list of ports to knock (in proper order)")
     args = parser.parse_args()
@@ -52,9 +51,11 @@ def main():
     if args.ports != None:
         port_list = args.ports.split(',')
         known_knock_order(args.dest_ip, port_list, args.cloaked)
-
-    if args.range != None:
-        port_range = args.range.split('-')
+    else:
+        if args.range != None:
+            port_range = args.range.split('-')
+        else:
+            port_range = ['1','65535']
         brute_force_range(args.dest_ip, port_range, args.cloaked)
 
 if __name__ == '__main__':
